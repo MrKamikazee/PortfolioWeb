@@ -11,7 +11,7 @@ function NavBar() {
     const buttonsRef = useRef(null);
     const hamburgerRef = useRef(null);
     const mobileMenuRef = useRef(null);
-
+    const scrollTriggerRef = useRef(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isNavbarVisible, setIsNavbarVisible] = useState(false);
 
@@ -63,7 +63,7 @@ function NavBar() {
                 ease: "power2.in"
             }, 0.3);
 
-        ScrollTrigger.create({
+        scrollTriggerRef.current = ScrollTrigger.create({
             trigger: ".hero-section",
             start: "bottom top",
             end: "bottom top",
@@ -78,7 +78,9 @@ function NavBar() {
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            if (scrollTriggerRef.current) {
+                scrollTriggerRef.current.kill();
+            }
         };
     }, [isNavbarVisible]);
 

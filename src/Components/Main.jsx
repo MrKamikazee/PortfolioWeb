@@ -2,6 +2,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from './NavBar';
+import AboutSection from './AboutSection';
 import '../CSS/App.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Main() {
     const heroRef = useRef(null);
     const contentRef = useRef(null);
+    const heroTriggerRef = useRef(null);
 
     useEffect(() => {
         const tl = gsap.timeline({
@@ -20,8 +22,12 @@ function Main() {
             }
         });
 
+        heroTriggerRef.current = tl.scrollTrigger;
+
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            if (heroTriggerRef.current) {
+                heroTriggerRef.current.kill();
+            }
         };
     }, []);
 
@@ -35,11 +41,7 @@ function Main() {
                 </div>
             </div>
             <div className="main-content" ref={contentRef}>
-                <section className="about-section">
-                    <h2>Sobre Mi</h2>
-                    <p>Aquí va tu información personal y profesional...</p>
-                </section>
-                
+                <AboutSection />
                 <section className="projects-section">
                     <h2>Proyectos</h2>
                     <p>Aquí van tus proyectos...</p>
