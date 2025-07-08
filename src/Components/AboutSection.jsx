@@ -108,7 +108,7 @@ function AboutSection() {
                 </div>
 
                 <div className="skills-section">
-                    <h4>Tecnologías principales</h4>
+                    <h4>Conocimientos Principales</h4>
                     <div className="skills-badges">
                         <span className="skill-badge codes">C#</span>
                         <span className="skill-badge codes">C++</span>
