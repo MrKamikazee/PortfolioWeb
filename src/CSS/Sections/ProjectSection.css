@@ -1,0 +1,47 @@
+﻿@import "CommonSectionsSyles.css";
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.projects-grid .project-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 350px;
+  max-width: 500px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .projects-section {
+    margin: 30px;
+  }
+
+  .projects-grid {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .projects-grid .project-card {
+    flex: none;
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+}

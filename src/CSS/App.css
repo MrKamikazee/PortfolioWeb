@@ -85,27 +85,9 @@ body {
     min-height: 200vh;
     background: #f8f9fa;
     padding: 80px 20px 40px 20px;
-}
-
-.projects-section {
-    max-width: 1200px;
-    margin: 0 auto 100px auto;
-}
-
-.projects-section h2 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.projects-section p {
-    font-size: 1.2rem;
-    color: #666;
-    text-align: center;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 /* Responsive */
@@ -119,10 +101,6 @@ body {
     .main-content {
         padding: 60px 15px 30px 15px;
     }
-
-    .projects-section h2 {
-        font-size: 2.5rem;
-    }
 }
 
 @media (max-width: 800px) {
@@ -130,9 +108,5 @@ body {
         font-size: clamp(2.5rem, 18vw, 6rem);
         transform: translateY(-200px);
         animation: heroLogoAppearSmallMobiles 2s ease-out 0.5s forwards;
-    }
-
-    .projects-section h2 {
-        font-size: 2rem;
     }
 }

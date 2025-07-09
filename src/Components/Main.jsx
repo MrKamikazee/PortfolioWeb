@@ -1,9 +1,11 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import NavBar from './NavBar';
-import AboutSection from './AboutSection';
+import NavBar from './Sections/NavBar';
+import AboutSection from './Sections/AboutSection';
 import '../CSS/App.css';
+import ProjectCard from "./Others/ProjectCard";
+import ProjectSection from "./Sections/ProjectSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,10 +44,7 @@ function Main() {
             </div>
             <div className="main-content" ref={contentRef}>
                 <AboutSection />
-                <section className="projects-section">
-                    <h2>Proyectos</h2>
-                    <p>Aquí van tus proyectos...</p>
-                </section>
+                <ProjectSection />
             </div>
         </div>
     );

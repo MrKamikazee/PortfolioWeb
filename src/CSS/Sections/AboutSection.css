@@ -1,4 +1,6 @@
-﻿/* ===== PRINCIPAL SECTION ===== */
+﻿@import "CommonSectionsSyles.css";
+
+/* ===== PRINCIPAL SECTION ===== */
 .about-section {
     display: flex;
     align-items: center;
@@ -20,7 +22,6 @@
 }
 
 .about-container {
-    max-width: 1500px;
     display: grid;
     gap: 20px;
     align-items: center;
@@ -29,6 +30,7 @@
 /* ===== IMAGE AND STATUS ===== */
 .about-image {
     position: relative;
+    justify-items: center;
 }
 
 .image-wrapper {
@@ -63,16 +65,6 @@
 }
 
 /* ===== PRINCIPAL CONTENT ===== */
-.about-container h2 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -91,13 +83,6 @@
     margin-bottom: 25px;
     font-weight: 500;
     line-height: 1.6;
-}
-
-.about-text p {
-    font-size: 1.2rem;
-    color: #6c757d;
-    line-height: 1.7;
-    margin-bottom: 20px;
 }
 
 .highlight {
@@ -143,66 +128,6 @@
     letter-spacing: 0.5px;
 }
 
-/* ===== SKILLS ===== */
-.skills-section h4 {
-    font-size: 1.8rem;
-    color: #6c757d;
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-.skills-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-}
-
-.skill-badge {
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid;
-}
-
-.skill-badge.codes {
-    background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
-    border-color: rgba(102, 126, 234, 0.2);
-}
-
-.skill-badge.apps {
-    background: rgba(118, 75, 162, 0.1);
-    color: #764ba2;
-    border-color: rgba(118, 75, 162, 0.2);
-}
-
-.skill-badge.tools {
-    background: rgba(40, 167, 69, 0.1);
-    color: #28a745;
-    border-color: rgba(40, 167, 69, 0.2);
-}
-
-.skill-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.skill-badge.codes:hover {
-    background: rgba(102, 126, 234, 0.2);
-}
-
-.skill-badge.apps:hover {
-    background: rgba(118, 75, 162, 0.2);
-}
-
-.skill-badge.tools:hover {
-    background: rgba(40, 167, 69, 0.2);
-}
-
 /* ===== BOTONES CTA ===== */
 .cta-buttons {
     display: flex;
@@ -244,10 +169,6 @@
         grid-template-columns: 1fr;
         gap: 50px;
         text-align: center;
-    }
-    
-    .about-container h2 {
-        font-size: 5rem;
     }
 
     .about-content {
@@ -335,10 +256,6 @@
 @media (max-width: 800px) {
     .about-section {
         padding: 80px 15px;
-    }
-    
-    .about-content h2 {
-        font-size: 2.5rem;
     }
     
     .intro-text {

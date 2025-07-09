@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../CSS/AboutSection.css';
+import '../../CSS/Sections/AboutSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,9 +70,9 @@ function AboutSection() {
     };
 
     return (
-        <section className="about-section" ref={sectionRef}>
+        <section className="about-section section-container" ref={sectionRef}>
             <div className="about-container">
-                <h2>Sobre Mi</h2>
+                <h2 className="section-title">Sobre Mi</h2>
                 <div className="about-content" ref={contentRef}>
                     <div className="about-image" ref={imageRef}>
                         <div className="image-wrapper">
@@ -108,7 +108,7 @@ function AboutSection() {
                 </div>
 
                 <div className="skills-section">
-                    <h4>Conocimientos Principales</h4>
+                    <h3>Conocimientos Principales</h3>
                     <div className="skills-badges">
                         <span className="skill-badge codes">C#</span>
                         <span className="skill-badge codes">C++</span>
