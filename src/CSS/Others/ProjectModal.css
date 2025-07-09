@@ -150,35 +150,82 @@
 
 /* Responsive */
 @media (max-width: 1000px) {
-  .modal-overlay {
-    padding: 10px;
-  }
+    .modal-overlay {
+        padding: 20px;
+    }
   
-  .modal-content {
-    max-height: 95vh;
-  }
-  
-  .modal-header {
-    padding: 20px 20px 15px;
-  }
-  
-  .modal-title {
-    font-size: 1.5rem;
-  }
-  
-  .modal-body {
-    padding: 20px;
-  }
-  
-  .modal-image {
-    height: 200px;
-  }
-  
-  .modal-buttons {
-    flex-direction: column;
-  }
-  
-  .modal-button {
-    justify-content: center;
-  }
+    .modal-content {
+        max-height: 120vh;
+        border-radius: 50px;
+    }
+
+    .modal-header {
+        padding: 50px;
+        border-bottom: 4px solid #eee;
+    }
+
+    .modal-title {
+        font-size: 4.5rem;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    .modal-close {
+        font-size: 6rem;
+        top: 75px;
+        right: 75px;
+    }
+
+    .modal-body {
+        padding: 50px 70px;
+    }
+
+    .modal-info h3 {
+        font-size: 3.5rem;
+        margin-top: 45px;
+    }
+
+    .modal-info h3:first-child {
+        margin-bottom: 30px;
+    }
+
+    .modal-description h3:first-child{
+        margin-bottom: 10px;
+    }
+
+    .modal-description p {
+        font-size: 2rem;
+    }
+
+    .skill-badge {
+        font-size: 2rem;
+    }
+
+    .modal-features li {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        padding-left: 45px;
+    }
+
+    .modal-features li:before {
+        font-size: 2rem;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-button {
+        justify-content: center;
+        font-size: 3rem;
+        border-radius: 3rem;
+        width: 50%;
+        padding: 2rem;
+    }
+
+    .modal-button:hover {
+        background: #555;
+        transform: translateY(-2px);
+    }
 }
