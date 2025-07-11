@@ -1,112 +1,110 @@
-* {
+/* =================== GENERAL APP STYLES =================== */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    background: linear-gradient(120deg, #ece9f7 0%, #fff 100%);
+    color: #22223b;
+    min-height: 100vh;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-.App {
+#root, .App {
     min-height: 100vh;
-}
-
-/* Hero Section - Logo grande en el centro */
-.hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    /* Aquí podrás agregar tu GIF de fondo */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.hero-logo {
-    font-size: clamp(4rem, 12vw, 12rem);
-    font-weight: 900;
-    color: white;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: heroLogoAppear 2s ease-out 0.5s forwards;
-}
-
-@keyframes heroLogoAppear {
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-@keyframes heroLogoAppearMobiles {
-    to {
-        opacity: 1;
-        transform: translateY(-200px);
-    }
-}
-
-@keyframes heroLogoAppearSmallMobiles {
-    to {
-        opacity: 1;
-        transform: translateY(-100px);
-    }
-}
-
-/* Main Content */
-.main-content {
-    min-height: 200vh;
-    background: #f8f9fa;
-    padding: 80px 20px 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    background: none;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
-    .hero-logo {
-        font-size: clamp(3rem, 15vw, 8rem);
-        transform: translateY(-300px);
-        animation: heroLogoAppearMobiles 2s ease-out 0.5s forwards;
-    }
-    
-    .main-content {
-        padding: 60px 15px 30px 15px;
+/* =================== SCROLLBAR =================== */
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #e3e3e3;
+    border-radius: 1rem;
+}
+
+/* =================== TITULOS & TEXTOS =================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    color: #4c468a;
+    margin-top: 0;
+    letter-spacing: .01em;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 1em;
+}
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.7em;
+}
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+}
+
+p, span, li {
+    font-size: 1.02rem;
+}
+
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color .2s;
+}
+a:hover, a:focus-visible {
+    color: #3b468f;
+}
+
+/* =================== GENERAL LAYOUT =================== */
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+}
+@media (max-width: 700px) {
+    .section-container {
+        padding: 2.2rem 0.7rem;
     }
 }
 
-@media (max-width: 800px) {
-    .hero-logo {
-        font-size: clamp(2.5rem, 18vw, 6rem);
-        transform: translateY(-200px);
-        animation: heroLogoAppearSmallMobiles 2s ease-out 0.5s forwards;
-    }
+/* =================== UTILITIES =================== */
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem;}
+.mb-1 { margin-bottom: 1rem;}
+.mt-2 { margin-top: 2rem;}
+.mb-2 { margin-bottom: 2rem;}
+
+
+/* =================== ANIMATIONS =================== */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
 }

@@ -1,0 +1,153 @@
+﻿/* ================== HERO SECTION ================== */
+
+.hero-section {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(115deg, #f9f6ff 68%, #e7f1ff 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 3rem 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor interno con máximo ancho y centrado */
+.hero-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.8rem;
+    position: relative;
+    z-index: 1;
+    padding: 0 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ****** TEXTOS TITULARES ****** */
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #493f87;
+    line-height: 1.09;
+    margin-bottom: 0.5em;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.18rem, 2.7vw, 1.77rem);
+    line-height: 1.26;
+    color: #7f79b9;
+    font-weight: 500;
+    margin-bottom: 1.7em;
+}
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.1rem;
+    }
+    .hero-subtitle {
+        font-size: 1.02rem;
+    }
+}
+
+/* *********** IMAGEN/AVATAR HERO ************ */
+.hero-avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    max-width: 280px;
+    width: 26vw;
+    position: relative;
+}
+
+.hero-avatar {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 24% 36% 33% 29% / 33% 25% 43% 29%;
+    overflow: hidden;
+    background: #efeaff;
+    box-shadow: 0 6px 40px 0 rgba(110,100,220,0.18);
+    position: relative;
+    z-index: 2;
+    transition: box-shadow .3s, transform .28s;
+}
+.hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+    transition: transform .4s;
+    background: #eee;
+}
+
+.hero-avatar:hover, .hero-avatar:focus-visible {
+    box-shadow: 0 18px 40px 0 rgba(110,100,220,0.30);
+    transform: rotateZ(1.4deg) scale(1.04);
+}
+.hero-avatar:hover img, .hero-avatar:focus-visible img {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+/* ********* Botones de acción y badges ********* */
+/* Usa clases reutilizadas: .cta-buttons, .skills-badges, etc. */
+
+/* ****** Elementos decorativos: burbujas/figuras ****** */
+.hero-bg-bubble {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+/* Burbujas decorativas específicas (puedes quitar/agregar según tu HTML/JSX) */
+.hero-bg-bubble.bubble-1 {
+    width: 200px;
+    height: 180px;
+    background: radial-gradient(circle, #d8c8fc 80%, transparent 100%);
+    left: -60px;
+    top: -60px;
+}
+.hero-bg-bubble.bubble-2 {
+    width: 340px;
+    height: 200px;
+    background: radial-gradient(circle, #bbe1fd 87%, transparent 100%);
+    right: -90px;
+    bottom: -70px;
+}
+.hero-bg-bubble.bubble-3 {
+    width: 110px;
+    height: 120px;
+    background: radial-gradient(circle, #9c80e8 81%, transparent 100%);
+    left: 18vw;
+    top: 66%;
+    opacity: 0.14;
+}
+
+@media (max-width: 600px) {
+    .hero-avatar-container {
+        min-width: 90px;
+        max-width: 155px;
+        width: 42vw;
+    }
+    .hero-bg-bubble.bubble-1, .hero-bg-bubble.bubble-2, .hero-bg-bubble.bubble-3 {
+        width: 90px !important;
+        height: 70px !important;
+    }
+}

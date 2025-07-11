@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from './Sections/NavBar';
 import AboutSection from './Sections/AboutSection';
 import '../CSS/App.css';
-import ProjectCard from "./Others/ProjectCard";
+import '../CSS/Sections/HeroSection.css';
 import ProjectSection from "./Sections/ProjectSection";
 
 gsap.registerPlugin(ScrollTrigger);
