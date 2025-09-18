@@ -1,0 +1,62 @@
+﻿[
+  {
+    "id": 1,
+    "title": "Proyecto 1",
+    "image": "https://via.placeholder.com/400x300/667eea/ffffff?text=Proyecto+1",
+    "description": "Este es un proyecto increíble desarrollado con React y CSS moderno. Incluye animaciones fluidas y un diseño responsivo que se adapta a cualquier dispositivo.",
+    "technologies": {
+      "codes": ["React", "CSS3", "JavaScript", "HTML5"],
+      "apps": ["Node.js", "Express"],
+      "tools": ["Git", "VSCode", "npm"]
+    },
+    "githubUrl": "https://tu-usuario.github.io/proyecto-2",
+    "itchIo": "https://tu-usuario.github.io/proyecto-2",
+    "webUrl": "https://tu-usuario.github.io/proyecto-2",
+    "features": [
+      "Diseño responsivo y mobile-first",
+      "Animaciones suaves con CSS",
+      "Interfaz intuitiva y moderna",
+      "Optimizado para rendimiento"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Proyecto 2",
+    "image": "https://via.placeholder.com/400x300/764ba2/ffffff?text=Proyecto+2",
+    "description": "Una aplicación web completa que demuestra el uso de tecnologías modernas y mejores prácticas de desarrollo front-end.",
+    "technologies": {
+      "codes": ["React", "TypeScript", "SASS"],
+      "apps": ["MongoDB", "Firebase"],
+      "tools": ["Webpack", "Docker", "GitHub Actions"]
+    },
+    "githubUrl": "",
+    "itchIo": "https://tu-usuario.github.io/proyecto-2",
+    "webUrl": "",
+    "features": [
+      "Base de datos NoSQL",
+      "API REST completa",
+      "Autenticación de usuarios",
+      "Dashboard administrativo"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Proyecto 3",
+    "image": "https://via.placeholder.com/400x300/f093fb/ffffff?text=Proyecto+3",
+    "description": "Un proyecto enfocado en la experiencia del usuario con un diseño limpio y funcionalidades avanzadas.",
+    "technologies": {
+      "codes": ["Vue.js", "TypeScript", "SASS"],
+      "apps": ["Firebase", "PostgreSQL"],
+      "tools": ["Vite", "Jest", "Figma"]
+    },
+    "githubUrl": "https://github.com/tu-usuario/proyecto-3",
+    "itchIo": "",
+    "webUrl": "",
+    "features": [
+      "Tipado estático con TypeScript",
+      "Integración con Firebase",
+      "Componentes reutilizables",
+      "Testing automatizado"
+    ]
+  }
+]

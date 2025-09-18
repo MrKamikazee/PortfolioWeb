@@ -1,0 +1,99 @@
+﻿/* Sección About con estilo editorial, contrastando con la grilla de tarjetas de Projects */
+.about-section {
+    background: var(--color-bg); /* contraste con Projects */
+    color: var(--color-text-dark);
+    padding-block: clamp(2rem, 6vw, 4rem);
+}
+
+.about.container { inline-size: min(95vw, 72ch); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2rem); }
+
+/* Título subrayado con el primario */
+.about__header { margin-block-end: clamp(1rem, 3vw, 1.5rem); }
+.about__title {
+    font-weight: 800;
+    border-bottom: 0.25rem solid var(--color-primary);
+    display: inline-block;
+    padding-block-end: 0.2em;
+}
+
+/* Grid principal: foto + contenido */
+.about__grid {
+    display: grid;
+    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+@media (min-width: 50rem) {
+    .about__grid { grid-template-columns: minmax(14rem, 28%) 1fr; }
+}
+
+/* Foto con marco suave y “blob” */
+.about__media { margin: 0; }
+.about__photo {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.6rem 1.4rem color-mix(in oklab, var(--color-shadow) 35%, transparent);
+    isolation: isolate;
+}
+.about__photo::after {
+    content: "";
+    position: absolute;
+    inset: -20% -10% auto auto;
+    inline-size: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: color-mix(in oklab, var(--color-primary) 18%, white);
+    filter: blur(40px);
+    opacity: 0.25;
+    z-index: -1;
+}
+.about__photo img { display: block; inline-size: 100%; block-size: auto; object-fit: cover; }
+
+/* Texto e info */
+.about__content p { margin: 0 0 0.9rem; }
+.highlight { color: var(--color-accent2); font-weight: 700; }
+
+/* Stats como cápsulas, no tarjetas */
+.about__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-block: 0.5rem 1rem;
+}
+.stat {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.4em 0.8em;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--color-primary) 14%, white);
+    color: var(--color-accent2);
+}
+.stat__num { font-weight: 800; }
+.stat__label { opacity: 0.85; }
+
+/* Skills como badges lineales */
+.about__skills { margin-block: 1rem 1.25rem; }
+.about__subtitle { margin: 0 0 0.5rem; font-weight: 700; }
+.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill {
+    display: inline-block;
+    padding: 0.35em 0.8em;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95em;
+    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    color: var(--color-accent2);
+}
+.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 14%, white); }
+.skill.is-app  { background: color-mix(in oklab, var(--color-primary) 14%, white); }
+.skill.is-tool { background: color-mix(in oklab, var(--color-accent1) 18%, white); }
+
+/* Acciones */
+.about__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-block-start: 1rem;
+}

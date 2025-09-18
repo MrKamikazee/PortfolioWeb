@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../../CSS/Sections/AboutSection.css';
+import '../../CSS/Sections/About.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +33,7 @@ function AboutSection() {
         );
 
         entryTriggerRef.current = entryTl.scrollTrigger;
+
         const exitTl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
@@ -53,12 +54,8 @@ function AboutSection() {
         exitTriggerRef.current = exitTl.scrollTrigger;
 
         return () => {
-            if (entryTriggerRef.current) {
-                entryTriggerRef.current.kill();
-            }
-            if (exitTriggerRef.current) {
-                exitTriggerRef.current.kill();
-            }
+            if (entryTriggerRef.current) entryTriggerRef.current.kill();
+            if (exitTriggerRef.current) exitTriggerRef.current.kill();
         };
     }, []);
 
@@ -70,61 +67,58 @@ function AboutSection() {
     };
 
     return (
-        <section className="about-section section-container" ref={sectionRef}>
-            <div className="about-container">
-                <h2 className="section-title">Sobre Mi</h2>
-                <div className="about-content" ref={contentRef}>
-                    <div className="about-image" ref={imageRef}>
-                        <div className="image-wrapper">
+        <section className="about-section" ref={sectionRef}>
+            <div className="about container">
+                <header className="about__header">
+                    <h2 className="about__title">Sobre Mi</h2>
+                </header>
+
+                <div className="about__grid">
+                    <figure className="about__media" ref={imageRef}>
+                        <div className="about__photo">
                             <img src="/path/to/your/photo.jpg" alt="Foto de Martín" />
-                            <div className="image-gradient"></div>
                         </div>
-                    </div>
-                    <div className="about-text">
-                        <p className="intro-text">
-                            ¡Hola! Soy <span className="highlight">Martín Román</span>,
-                            desarrollador y diseñador de <span className="highlight">videojuegos </span>
-                            especializado en crear experiencias tanto educativas como para entretenimiento.
+                    </figure>
+
+                    <div className="about__content" ref={contentRef}>
+                        <p className="about__intro">
+                            ¡Hola! Soy <span className="highlight">Martín Román</span>, desarrollador y diseñador de <span className="highlight">videojuegos</span> enfocado en experiencias educativas y de entretenimiento.
                         </p>
                         <p>
-                            Transformo ideas complejas en aplicaciones elegantes y funcionales. 
-                            Con <span className="highlight">5 años</span> trabajando en C# para Unity y
-                            <span className="highlight"> 3 años</span> en blueprints para Unreal,
-                            me enfoco en código limpio y eficiente para presentar soluciones de calidad tanto
-                            para el backend como para el frontend.
+                            Transformo ideas complejas en aplicaciones elegantes y funcionales. Con <span className="highlight">5 años</span> en C# para Unity y <span className="highlight">3 años</span> con blueprints en Unreal, priorizo código limpio y eficiente.
                         </p>
-                    </div>
-                </div>
 
-                <div className="highlight-stats">
-                    <div className="stat-item">
-                        <span className="stat-number">15+</span>
-                        <span className="stat-label">Proyectos</span>
-                    </div>
-                    <div className="stat-item">
-                        <span className="stat-number">5</span>
-                        <span className="stat-label">Años exp.</span>
-                    </div>
-                </div>
+                        <div className="about__stats">
+                            <div className="stat">
+                                <span className="stat__num">15+</span>
+                                <span className="stat__label">Proyectos</span>
+                            </div>
+                            <div className="stat">
+                                <span className="stat__num">5</span>
+                                <span className="stat__label">Años exp.</span>
+                            </div>
+                        </div>
 
-                <div className="skills-section">
-                    <h3>Conocimientos Principales</h3>
-                    <div className="skills-badges">
-                        <span className="skill-badge codes">C#</span>
-                        <span className="skill-badge codes">C++</span>
-                        <span className="skill-badge codes">Blueprints</span>
-                        <span className="skill-badge apps">Unity</span>
-                        <span className="skill-badge apps">Unreal</span>
-                        <span className="skill-badge apps">Blender</span>
-                        <span className="skill-badge tools">Git</span>
-                        <span className="skill-badge tools">Photon</span>
-                        <span className="skill-badge tools">SpacetimeDB</span>
-                    </div>
-                </div>
+                        <div className="about__skills">
+                            <h3 className="about__subtitle">Conocimientos Principales</h3>
+                            <div className="skills">
+                                <span className="skill is-code">C#</span>
+                                <span className="skill is-code">C++</span>
+                                <span className="skill is-code">Blueprints</span>
+                                <span className="skill is-app">Unity</span>
+                                <span className="skill is-app">Unreal</span>
+                                <span className="skill is-app">Blender</span>
+                                <span className="skill is-tool">Git</span>
+                                <span className="skill is-tool">Photon</span>
+                                <span className="skill is-tool">SpacetimeDB</span>
+                            </div>
+                        </div>
 
-                <div className="cta-buttons">
-                    <button className="cta">Descargar CV</button>
-                    <button className="cta" onClick={scrollToProjects}>Ver Proyectos</button>
+                        <div className="about__actions">
+                            <button className="button button--secondary">Descargar CV</button>
+                            <button className="button" onClick={scrollToProjects}>Ver Proyectos</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

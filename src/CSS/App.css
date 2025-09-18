@@ -1,110 +1,25 @@
-/* =================== GENERAL APP STYLES =================== */
-html {
-    font-size: 16px;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-*, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+:root {
+    --color-primary: #F23847;
+    --color-secondary: #A62934;
+    --color-bg: #8B8B8C;
+    --color-bg2: #404040;
+    --color-shadow: #323232;
+    --color-accent1: #404040;
+    --color-accent2: #0D0D0D;
+    --color-text: #0D0D0D;
+    --color-text-dark: #202020;
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-heading: "Poppins", var(--font-sans);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    font-size: 1rem;
-    background: linear-gradient(120deg, #ece9f7 0%, #fff 100%);
-    color: #22223b;
-    min-height: 100vh;
-    line-height: 1.6;
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
-#root, .App {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: none;
-}
-
-/* =================== SCROLLBAR =================== */
-::-webkit-scrollbar {
-    width: 0.6rem;
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: #e3e3e3;
-    border-radius: 1rem;
-}
-
-/* =================== TITULOS & TEXTOS =================== */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-    color: #4c468a;
-    margin-top: 0;
-    letter-spacing: .01em;
-    line-height: 1.15;
-}
-
-h1 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    margin-bottom: 1em;
-}
-h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 0.7em;
-}
-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5em;
-}
-
-p, span, li {
-    font-size: 1.02rem;
-}
-
-a {
-    color: #667eea;
-    text-decoration: none;
-    transition: color .2s;
-}
-a:hover, a:focus-visible {
-    color: #3b468f;
-}
-
-/* =================== GENERAL LAYOUT =================== */
-.section-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3.5rem 1.5rem;
-}
-@media (max-width: 700px) {
-    .section-container {
-        padding: 2.2rem 0.7rem;
-    }
-}
-
-/* =================== UTILITIES =================== */
-
-.text-center { text-align: center; }
-.mt-1 { margin-top: 1rem;}
-.mb-1 { margin-bottom: 1rem;}
-.mt-2 { margin-top: 2rem;}
-.mb-2 { margin-bottom: 2rem;}
-
-
-/* =================== ANIMATIONS =================== */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-}
-@keyframes fadeIn {
-    to { opacity: 1; }
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }

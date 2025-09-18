@@ -21,15 +21,14 @@ function NavBar() {
         const buttons = buttonsRef.current;
         const hamburger = hamburgerRef.current;
 
+        //TODO: ARREGLAR LA ANIMACIÓN DE SALIDA
+
         gsap.set(navbar, {
             backgroundColor: "transparent",
             backdropFilter: "none",
             boxShadow: "0 0px 0px rgba(0, 0, 0, 0)"
         });
-        gsap.set([logo, buttons, hamburger], {
-            opacity: 0,
-            y: -20
-        });
+        gsap.set([logo, buttons, hamburger], { opacity: 0, y: -20 });
 
         const showNavbar = gsap.timeline({ paused: true });
         showNavbar
@@ -44,7 +43,7 @@ function NavBar() {
                 opacity: 1,
                 y: 0,
                 duration: 0.3,
-                ease: "back.out(1.7)"
+                ease: "back.out(1.7)",
             }, 0.1);
 
         const hideNavbar = gsap.timeline({ paused: true });
@@ -52,29 +51,26 @@ function NavBar() {
             .to([logo, buttons, hamburger], {
                 opacity: 0,
                 y: -20,
-                duration: 0.3,
+                duration: 0.2,
                 ease: "back.in"
             }, 0)
             .to(navbar, {
                 backgroundColor: "transparent",
                 backdropFilter: "none",
                 boxShadow: "0 0px 0px rgba(0, 0, 0, 0)",
-                duration: 0.4,
-                ease: "power2.in"
-            }, 0.3);
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => setIsNavbarVisible(false)
+            }, 0.1);
 
         scrollTriggerRef.current = ScrollTrigger.create({
-            trigger: ".hero-section",
-            start: "bottom top",
-            end: "bottom top",
-            onEnter: () => {
-                setIsNavbarVisible(true);
+            start: 0,
+            end: 99999,
+            onEnter: self => {
                 showNavbar.play();
+                setIsNavbarVisible(true);
             },
-            onLeaveBack: () => {
-                setIsNavbarVisible(false);
-                hideNavbar.play();
-            }
+            onLeaveBack: self => hideNavbar.play()
         });
 
         return () => {
@@ -93,18 +89,7 @@ function NavBar() {
         if (!isMobileMenuOpen) {
             setIsMobileMenuOpen(true);
             gsap.set(mobileMenu, { display: 'flex' });
-            gsap.fromTo(mobileMenu,
-                {
-                    opacity: 0,
-                    y: -20
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                }
-            );
+            gsap.fromTo(mobileMenu, { opacity: 0, y: -20 },{ opacity: 1, y: 0, duration: 0.3, ease: "power2.out" });
         } else {
             gsap.to(mobileMenu, {
                 opacity: 0,
@@ -125,17 +110,9 @@ function NavBar() {
         
         const section = document.querySelector(`.${sectionClass}`);
         if (section) {
-            if (isMobileMenuOpen) {
-                toggleMobileMenu();
-            }
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: {
-                    y: section,
-                    offsetY: 80
-                },
-                ease: "power2.inOut"
-            });
+            if (isMobileMenuOpen) toggleMobileMenu();
+            //gsap.to(window, { duration: 1, scrollTo: { y: section, offsetY: 80 }, ease: "power2.inOut" });
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }
     };
 
