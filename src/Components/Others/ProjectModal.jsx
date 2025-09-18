@@ -1,94 +1,124 @@
-﻿import React from 'react';
-//import '../../CSS/Others/ProjectModal.css';
+﻿import React, {useMemo, useState, useEffect, useRef} from 'react';
+import '../../CSS/Others/ProjectModal.css';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  if (!isOpen || !project) return null;
+  const dialogRef = useRef(null);
+  const closeBtnRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    // Intento de enfoque inicial en el botón cerrar
+    closeBtnRef.current?.focus();
+    // Bloquea scroll del body mientras el modal está abierto
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen, onClose]);
+
+  const [index, setIndex] = useState(0);
+  useEffect(() => setIndex(0), [project?.id, isOpen]);
+
+  const images = useMemo(() => {
+    return  Array.isArray(project?.images) && project?.images?.length > 0
+        ? project.images
+        : (project?.presentationImage ? [project.presentationImage] : []);
+  }, [project]);
+  const resolveImageSrc = (fileName) => {
+      return `${process.env.PUBLIC_URL}/Projects/${project.title}/Images/${fileName}`;
+  };
+  const hasMultiple = images.length > 1;
+  const goPrev = () => setIndex((i) => (i - 1 + images.length) % images.length);
+  const goNext = () => setIndex((i) => (i + 1) % images.length);
 
   const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+        if (e.target === e.currentTarget) onClose();
+    };
+
+  if (!isOpen || !project) return null;
 
   return (
-    <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
+    <div className="modal-overlay" onClick={handleOverlayClick} role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div className="modal-content" ref={dialogRef}>
         <div className="modal-header">
-          <h2 className="modal-title section-title">{project.title}</h2>
-          <button className="modal-close" onClick={onClose}>×</button>
+          <h2 id="modal-title" className="modal-title">{project.title}</h2>
+          <button className="modal-close" onClick={onClose} aria-label="Cerrar" ref={closeBtnRef}>×</button>
         </div>
-        
+
         <div className="modal-body">
-          <div className="modal-image-container">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="modal-image"
-            />
+          <div className="modal-image-conteiner">
+            {hasMultiple && (
+              <button
+                  className="carousel-btn prev"
+                  onClick={goPrev}
+                  aria-label="Anterior"
+              >
+                  ‹
+              </button>
+            )}
+            <div className="modal-image">
+              <img src={resolveImageSrc(images[index])}
+                   alt={`${project.title} - ${index + 1}/${images.length}`}
+              />
+            </div>
+            {hasMultiple && (
+                <button
+                  className="carousel-btn next"
+                  onClick={goNext}
+                  aria-label="Siguiente"
+                >
+                  ›
+                </button>
+            )}
           </div>
-          
+          {hasMultiple && (
+            <div className="carousel-dots" aria-label="Selector de imagen">
+              {images.map((_, i) => (
+                <button
+                    key={i}
+                    className={`dot ${i === index ? 'is-active' : ''}`}
+                    onClick={() => setIndex(i)}
+                    aria-label={`Ir a imagen ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
           <div className="modal-info">
-            <div className="modal-description">
+            <section className="modal-section">
               <h3>Descripción</h3>
               <p>{project.description}</p>
-            </div>
-            
-            <div className="modal-technologies">
+            </section>
+
+            <section className="modal-section">
               <h3>Tecnologías</h3>
-              <div className="skills-badges">
-                {project.technologies?.codes?.map((code, index) => (
-                    <span key={index} className="skill-badge codes">{code}</span>
-                ))}
-
-                {project.technologies?.apps?.map((app, index) => (
-                    <span key={index} className="skill-badge apps">{app}</span>
-                ))}
-
-                {project.technologies?.tools?.map((tool, index) => (
-                    <span key={index} className="skill-badge tools">{tool}</span>
-                ))}
+              <div className="skills">
+                {project.technologies?.codes?.map((t, i) => (<span key={`c-${i}`} className="skill is-code">{t}</span>))}
+                {project.technologies?.apps?.map((t, i) => (<span key={`a-${i}`} className="skill is-app">{t}</span>))}
+                {project.technologies?.tools?.map((t, i) => (<span key={`t-${i}`} className="skill is-tool">{t}</span>))}
               </div>
-            </div>
-            
-            <div className="modal-features">
-              <h3>Características</h3>
-              <ul>
-                {project.features?.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </div>
+            </section>
+
+            {project.features?.length ? (
+              <section className="modal-section">
+                <h3>Características</h3>
+                <ul className="features">
+                  {project.features.map((f, i) => <li key={i}>{f}</li>)}
+                </ul>
+              </section>
+            ) : null}
           </div>
         </div>
-        
+
         <div className="modal-footer">
-          {project.githubUrl && (
-              <a href={project.githubUrl}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="modal-button"
-              >
-                GitHub
-              </a>
-          )}
-          {project.itchIo && (
-              <a href={project.itchIo}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="modal-button"
-              >
-                Itch.Io
-              </a>
-          )}
-          {project.webUrl && (
-              <a href={project.webUrl}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="modal-button"
-              >
-                Web
-              </a>
-          )}
+          {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="button modal-button">GitHub</a>}
+          {project.itchIo && <a href={project.itchIo} target="_blank" rel="noopener noreferrer" className="button modal-button">Itch.Io</a>}
+          {project.GDD && <a href={project.GDD} target="_blank" rel="noopener noreferrer" className="button modal-button">GDD</a>}
         </div>
       </div>
     </div>

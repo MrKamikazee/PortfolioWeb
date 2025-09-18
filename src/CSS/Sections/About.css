@@ -101,9 +101,6 @@
   background: color-mix(in oklab, var(--color-bg2) 10%, white);
   border: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
 }
-.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 30%, white); }
-.skill.is-app  { background: color-mix(in oklab, var(--color-accent1) 30%, white); }
-.skill.is-tool { background: color-mix(in oklab, var(--color-primary) 60%, white); }
 
 /* Acciones */
 .about__actions {
@@ -122,39 +119,10 @@
     gap: clamp(0.6rem, 1vw, 0.9rem);
     margin-block-start: 1.25rem;
 }
-
-/* Estilos de botones (coherentes con la paleta) */
 .about__actions .button {
-    --btn-bg: var(--color-primary);
-    --btn-fg: #fff;
     padding: 0.85em 1.35em;
     border: none;
-    border-radius: 0.8em;
-    background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 92%, white), var(--btn-bg));
-    color: var(--btn-fg);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    box-shadow: 0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent);
-    transition: transform 120ms ease, filter 160ms ease, box-shadow 160ms ease;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
-    text-decoration: none;
     line-height: 1;
     vertical-align: middle;
-}
-.about__actions .button:hover {
-    filter: brightness(1.06) saturate(1.05);
-    transform: translateY(-1px);
-    --btn-bg: var(--color-secondary);
-    text-decoration: none;
-}
-.about__actions .button:active { transform: translateY(0); }
-
-/* Accesibilidad de foco */
-.about__actions .button:focus-visible {
-    outline: none;
-    box-shadow:
-            0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent),
-            0 0 0 0.2rem color-mix(in oklab, var(--btn-bg) 35%, transparent);
-    text-decoration: none;
 }

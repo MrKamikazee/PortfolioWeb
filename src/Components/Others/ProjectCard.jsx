@@ -20,7 +20,7 @@ const ProjectCard = ({ project, onClick }) => {
     >
       <div className="pcard__bg" aria-hidden="true">
         <img
-          src={`${process.env.PUBLIC_URL}/Projects/${project.title}/${project.image}`}
+          src={`${process.env.PUBLIC_URL}/Projects/${project.title}/${project.presentationImage}`}
           alt=""
           className="pcard__img"
           loading="lazy"

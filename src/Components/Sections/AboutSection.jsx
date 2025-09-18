@@ -10,7 +10,6 @@ function AboutSection() {
     const imageRef = useRef(null);
     const contentRef = useRef(null);
     const entryTriggerRef = useRef(null);
-    const exitTriggerRef = useRef(null);
     const [projectsCount, setCount] = useState(null);
 
     useEffect(() => {
@@ -44,19 +43,8 @@ function AboutSection() {
             }
         });
 
-        exitTl.to(sectionRef.current, {
-            opacity: 0,
-            y: -30,
-            scale: 0.98,
-            duration: 1,
-            ease: "power2.out"
-        });
-
-        exitTriggerRef.current = exitTl.scrollTrigger;
-
         return () => {
             if (entryTriggerRef.current) entryTriggerRef.current.kill();
-            if (exitTriggerRef.current) exitTriggerRef.current.kill();
         };
     }, []);
 

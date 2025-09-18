@@ -51,7 +51,8 @@
     align-items: stretch;
 }
 
-/* Espacio final para respiro visual */
+/*
+!* Espacio final para respiro visual *!
 .projects__grid + * {
     margin-block-start: clamp(1.5rem, 3vw, 2rem);
-}
+}*/

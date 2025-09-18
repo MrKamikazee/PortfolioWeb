@@ -23,3 +23,34 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     letter-spacing: 0.01em;
 }
+
+.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 30%, white); }
+.skill.is-app  { background: color-mix(in oklab, var(--color-accent1) 30%, white); }
+.skill.is-tool { background: color-mix(in oklab, var(--color-primary) 60%, white); }
+
+.button {
+    --btn-bg: var(--color-primary);
+    --btn-fg: #fff;
+    border-radius: 0.8em;
+    background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 92%, white), var(--btn-bg));
+    color: var(--btn-fg);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent);
+    transition: transform 120ms ease, filter 160ms ease, box-shadow 160ms ease;
+    text-decoration: none;
+}
+.button:hover {
+    filter: brightness(1.06) saturate(1.05);
+    transform: translateY(-1px);
+    --btn-bg: var(--color-secondary);
+}
+.button:active { transform: translateY(0); }
+
+.button:focus-visible {
+    outline: none;
+    box-shadow:
+            0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent),
+            0 0 0 0.2rem color-mix(in oklab, var(--btn-bg) 35%, transparent);
+}

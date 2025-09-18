@@ -1,0 +1,196 @@
+﻿/* Overlay a pantalla completa */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: color-mix(in oklab, black 65%, transparent);
+    backdrop-filter: blur(4px) saturate(1.05);
+    display: grid;
+    place-items: center;
+    padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+/* Contenedor del modal */
+.modal-content {
+    inline-size: min(110ch, 96vw);
+    max-block-size: min(85svh, 56rem);
+    background: color-mix(in oklab, white 90%, var(--color-bg2));
+    color: var(--color-text-dark);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem color-mix(in oklab, var(--color-shadow) 45%, transparent);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.modal-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(0.9rem, 2vw, 1.1rem) clamp(1rem, 3vw, 1.5rem);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
+}
+.modal-title {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    color: var(--color-accent2);
+}
+.modal-close {
+    appearance: none;
+    border: none;
+    background: none;
+    inline-size: 2.2rem;
+    block-size: 2.2rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--color-accent2);
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 120ms ease;
+}
+.modal-close:hover { background: color-mix(in oklab, var(--color-primary) 14%, white); transform: scale(1.02); }
+
+/* Cuerpo con scroll interno si hace falta */
+.modal-body {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.25rem);
+    gap: clamp(1rem, 2vw, 1.25rem);
+    grid-template-columns: 1fr;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    overflow: auto; /* scroll interno */
+}
+
+.modal-image-conteiner {
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    box-shadow: 0 0.5rem 1.2rem color-mix(in oklab, var(--color-shadow) 25%, transparent);
+    display: grid;
+    place-items: center;
+    min-block-size: clamp(14rem, 36svh, 28rem);
+}
+
+/* Imagen destacada */
+.modal-image {
+    inline-size: 100%;
+    block-size: 100%;
+}
+.modal-image img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain; /* preserva proporciones */
+    background: color-mix(in oklab, var(--color-bg2) 6%, white);
+}
+
+.carousel-btn {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    inline-size: clamp(2.2rem, 3.5vw, 2.8rem);
+    block-size: clamp(2.2rem, 3.5vw, 2.8rem);
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: color-mix(in oklab, var(--color-accent2) 70%, black);
+    color: white;
+    font-size: clamp(1.2rem, 1vw + 0.75rem, 1.6rem);
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 120ms ease, opacity 160ms ease, background-color 160ms ease;
+}
+.carousel-btn:hover { transform: translateY(-50%) scale(1.05); opacity: 1; }
+.carousel-btn.prev { left: 0.6rem; }
+.carousel-btn.next { right: 0.6rem; }
+
+.carousel-dots {
+    grid-column: 1 / -1;         /* ocupa la fila completa en el grid padre si aplica */
+    order: 1;                    /* si el contenedor fuera flex, colócalo después */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-block: 0.6rem 0.2rem;
+}
+
+.modal-body > .modal-image-conteiner + .carousel-dots {
+    margin-top: 0.6rem;
+}
+
+.carousel-dots .dot {
+    inline-size: 0.6rem;
+    block-size: 0.6rem;
+    border-radius: 50%;
+    border: 1px solid color-mix(in oklab, var(--color-shadow) 35%, transparent);
+    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    cursor: pointer;
+    padding: 0;
+    appearance: none;
+    transition: transform 120ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.carousel-dots .dot:hover { transform: scale(1.1); }
+.carousel-dots .dot.is-active {
+    background: var(--color-primary);
+    border-color: color-mix(in oklab, var(--color-primary) 60%, var(--color-shadow));
+}
+
+.carousel-btn:focus-visible,
+.carousel-dots .dot:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem color-mix(in oklab, var(--color-primary) 35%, transparent);
+}
+
+/* Columna de info */
+.modal-info { display: grid; gap: clamp(0.75rem, 1.5vw, 1rem); }
+.modal-section h3 {
+    margin: 0 0 0.35rem;
+    font-weight: 800;
+    color: var(--color-accent2);
+}
+.modal-section p { margin: 0; line-height: 1.65; }
+
+/* Listado de features */
+.features { margin: 0; padding-left: 1.1em; line-height: 1.6; }
+
+/* Badges (coherentes con About) */
+.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill {
+    display: inline-block;
+    padding: 0.35em 0.8em;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    color: var(--color-accent2);
+    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    border: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
+}
+
+/* Footer con enlaces */
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    padding: clamp(0.9rem, 2vw, 1.2rem);
+    border-top: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
+}
+.button {
+    padding: 0.7em 1.1em;
+}
+
+/* Layout de 2 columnas en pantallas amplias */
+@media (min-width: 62rem) {
+    .modal-body {
+        grid-template-columns: 1.1fr 1fr;
+        align-items: start;
+    }
+    .modal-body > .modal-image-conteiner { grid-column: 1; }
+    .modal-body > .carousel-dots { grid-column: 1; }  /* debajo de la columna de la imagen */
+}
