@@ -1,17 +1,17 @@
 ﻿[
   {
     "id": 1,
-    "title": "Proyecto 1",
-    "image": "https://via.placeholder.com/400x300/667eea/ffffff?text=Proyecto+1",
+    "title": "Adventurer's Guild",
+    "image": "Icon.png",
     "description": "Este es un proyecto increíble desarrollado con React y CSS moderno. Incluye animaciones fluidas y un diseño responsivo que se adapta a cualquier dispositivo.",
     "technologies": {
       "codes": ["React", "CSS3", "JavaScript", "HTML5"],
       "apps": ["Node.js", "Express"],
       "tools": ["Git", "VSCode", "npm"]
     },
-    "githubUrl": "https://tu-usuario.github.io/proyecto-2",
-    "itchIo": "https://tu-usuario.github.io/proyecto-2",
-    "webUrl": "https://tu-usuario.github.io/proyecto-2",
+    "githubUrl": "https://github.com/MrKamikazee/Juego-del-gremio.git",
+    "itchIo": "",
+    "webUrl": "",
     "features": [
       "Diseño responsivo y mobile-first",
       "Animaciones suaves con CSS",

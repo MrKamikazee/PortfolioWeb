@@ -1,0 +1,71 @@
+﻿/* Carta de proyecto: preview simple con imagen + título */
+.pcard {
+    position: relative;
+    isolation: isolate;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    cursor: pointer;
+    min-block-size: clamp(15rem, 32vw, 19rem); /* un poco más alta */
+    background: color-mix(in oklab, var(--color-bg2) 70%, black);
+    box-shadow: 0 0.45rem 1.2rem color-mix(in oklab, var(--color-shadow) 35%, transparent);
+    transition: transform 160ms ease, box-shadow 180ms ease;
+    outline: none;
+}
+.pcard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 1.6rem color-mix(in oklab, var(--color-shadow) 45%, transparent);
+}
+.pcard:focus-visible {
+    box-shadow:
+            0 0 0 0.2rem color-mix(in oklab, var(--color-primary) 35%, transparent),
+            0 0.7rem 1.6rem color-mix(in oklab, var(--color-shadow) 45%, transparent);
+}
+
+/* Fondo con imagen */
+.pcard__bg { position: absolute; inset: 0; z-index: 0; }
+.pcard__img {
+    inline-size: 100%; block-size: 100%;
+    object-fit: cover; display: block;
+    filter: saturate(1.05) contrast(1.05);
+    transform: scale(1.02); transition: transform 400ms ease;
+}
+.pcard:hover .pcard__img { transform: scale(1.06); }
+
+/* Sombra/overlay para legibilidad del título */
+.pcard__shade {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.75) 100%);
+}
+
+/* Contenido anclado abajo */
+.pcard__content {
+    position: absolute;
+    left: 0; right: 0; bottom: 0; /* siempre al pie */
+    z-index: 2;
+    padding: clamp(0.9rem, 1.7vw, 1.15rem);
+    /* capa de soporte para legibilidad sin tapar hover */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.4) 100%);
+}
+
+.pcard__title {
+    margin: 0;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    font-size: clamp(1.05rem, 0.95rem + 0.7vw, 1.4rem);
+    text-shadow: 0 0.35rem 0.9rem rgba(0,0,0,0.55);
+    border-inline-start: 0.25rem solid var(--color-primary);
+    padding-inline-start: 0.6rem;
+    padding-block: 0.1rem 0.05rem;
+    line-height: 1.2;
+    /* Evita cortes por overflow y asegura visibilidad en 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Estado sin imagen (fallback) */
+.pcard:not(:has(img)) .pcard__shade {
+    background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+}

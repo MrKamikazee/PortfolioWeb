@@ -61,7 +61,7 @@ function AboutSection() {
     }, []);
 
     useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/Data/Projects.json`, { cache: 'no-store'})
+        fetch(`${process.env.PUBLIC_URL}/Projects/Projects.json`, { cache: 'no-store'})
             .then(r => r.json())
             .then(data => setCount(Array.isArray(data) ? data.length : 0))
             .catch(() => setCount(0));
