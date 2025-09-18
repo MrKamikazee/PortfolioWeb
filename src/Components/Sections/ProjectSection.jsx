@@ -1,7 +1,7 @@
 ﻿import React, {useEffect, useState} from 'react';
 import ProjectCard from '../Others/ProjectCard';
 import ProjectModal from '../Others/ProjectModal';
-//import '../../CSS/Sections/Projects.css';
+import '../../CSS/Sections/Projects.css';
 
 const ProjectsSection = () => {
     const [projects, setProjects] = useState([]);

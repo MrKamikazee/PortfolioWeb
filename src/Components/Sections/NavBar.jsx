@@ -33,7 +33,7 @@ function NavBar() {
         const showNavbar = gsap.timeline({ paused: true });
         showNavbar
             .to(navbar, {
-                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                backgroundColor: "var(--color-secondary)",
                 backdropFilter: "blur(10px)",
                 boxShadow: "0 2px 20px rgba(0, 0, 0, 0.1)",
                 duration: 0.2,

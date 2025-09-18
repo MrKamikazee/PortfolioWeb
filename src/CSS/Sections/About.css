@@ -1,99 +1,160 @@
-﻿/* Sección About con estilo editorial, contrastando con la grilla de tarjetas de Projects */
+﻿/* Fondo: degradado inclinado y separación con secciones adyacentes */
 .about-section {
-    background: var(--color-bg); /* contraste con Projects */
-    color: var(--color-text-dark);
-    padding-block: clamp(2rem, 6vw, 4rem);
+  background:
+    linear-gradient(12deg,
+      color-mix(in oklab, var(--color-bg2) 10%, var(--color-bg)) 0%,
+      var(--color-bg) 45%,
+      color-mix(in oklab, var(--color-bg) 70%, white) 100%);
+  color: var(--color-text-dark);
+  padding-block: clamp(2rem, 6vw, 4rem);
+  /* Separación visual arriba y abajo */
+  border-top: 1px solid color-mix(in oklab, var(--color-shadow) 20%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-shadow) 20%, transparent);
+  box-shadow:
+    0 -0.5rem 1.5rem color-mix(in oklab, var(--color-shadow) 18%, transparent) inset,
+    0  0.5rem 1.5rem color-mix(in oklab, var(--color-shadow) 22%, transparent) inset;
 }
 
-.about.container { inline-size: min(95vw, 72ch); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2rem); }
+/* Contenedor más ancho ya aplicado antes */
+.about.container {
+  inline-size: min(110ch, 96vw); /* más ancho aún */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
 
-/* Título subrayado con el primario */
+/* Título */
 .about__header { margin-block-end: clamp(1rem, 3vw, 1.5rem); }
 .about__title {
-    font-weight: 800;
-    border-bottom: 0.25rem solid var(--color-primary);
-    display: inline-block;
-    padding-block-end: 0.2em;
+  font-weight: 800;
+  border-bottom: 0.25rem solid var(--color-primary);
+  display: inline-block;
+  padding-block-end: 0.2em;
 }
 
-/* Grid principal: foto + contenido */
+/* Grid: imagen grande y columna de contenido */
 .about__grid {
-    display: grid;
-    gap: clamp(1rem, 3vw, 2rem);
-    grid-template-columns: 1fr;
-    align-items: start;
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: 1fr;
+  align-items: start;
 }
 @media (min-width: 50rem) {
-    .about__grid { grid-template-columns: minmax(14rem, 28%) 1fr; }
+  /* La imagen ocupa ~40% para que al costado entren texto + skills */
+  .about__grid { grid-template-columns: minmax(18rem, 40%) 1fr; }
 }
 
-/* Foto con marco suave y “blob” */
-.about__media { margin: 0; }
+/* Foto grande con proporción agradable */
 .about__photo {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 0.6rem 1.4rem color-mix(in oklab, var(--color-shadow) 35%, transparent);
-    isolation: isolate;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.6rem 1.4rem color-mix(in oklab, var(--color-shadow) 35%, transparent);
+  background: color-mix(in oklab, white 85%, var(--color-bg2));
+  aspect-ratio: 10/14;
 }
-.about__photo::after {
-    content: "";
-    position: absolute;
-    inset: -20% -10% auto auto;
-    inline-size: 60%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: color-mix(in oklab, var(--color-primary) 18%, white);
-    filter: blur(40px);
-    opacity: 0.25;
-    z-index: -1;
+.about__photo img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
 }
-.about__photo img { display: block; inline-size: 100%; block-size: auto; object-fit: cover; }
 
-/* Texto e info */
-.about__content p { margin: 0 0 0.9rem; }
-.highlight { color: var(--color-accent2); font-weight: 700; }
+/* Columna de contenido: más ancho y con tipografía algo mayor */
+.about__content p {
+  margin: 0 0 1rem;
+  font-size: clamp(1.1rem, 1rem + 0.7vw, 1.35rem);
+  line-height: 1.7;
+}
+.about__content strong,
+.about__content b,
+.highlight {
+  font-weight: 800;
+  color: var(--color-accent2);
+}
 
-/* Stats como cápsulas, no tarjetas */
+/* Stats */
 .about__stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-block: 0.5rem 1rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  margin-block: 0.5rem 1rem;
 }
 .stat {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.4rem;
-    padding: 0.4em 0.8em;
-    border-radius: 999px;
-    background: color-mix(in oklab, var(--color-primary) 14%, white);
-    color: var(--color-accent2);
+  display: inline-flex; align-items: baseline; gap: 0.4rem;
+  padding: 0.5em 1em; border-radius: 999px;
+  background: color-mix(in oklab, var(--color-primary) 60%, white);
+  color: var(--color-accent2);
 }
 .stat__num { font-weight: 800; }
 .stat__label { opacity: 0.85; }
 
-/* Skills como badges lineales */
+/* Skills: restauramos look de badges con buen contraste */
 .about__skills { margin-block: 1rem 1.25rem; }
 .about__subtitle { margin: 0 0 0.5rem; font-weight: 700; }
-.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skills { display: flex; flex-wrap: wrap; gap: 0.65rem; }
 .skill {
-    display: inline-block;
-    padding: 0.35em 0.8em;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.95em;
-    background: color-mix(in oklab, var(--color-bg2) 10%, white);
-    color: var(--color-accent2);
+  display: inline-block;
+  padding: 0.45em 1em;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+  letter-spacing: 0.01em;
+  color: var(--color-accent2);
+  background: color-mix(in oklab, var(--color-bg2) 10%, white);
+  border: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
 }
-.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 14%, white); }
-.skill.is-app  { background: color-mix(in oklab, var(--color-primary) 14%, white); }
-.skill.is-tool { background: color-mix(in oklab, var(--color-accent1) 18%, white); }
+.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 30%, white); }
+.skill.is-app  { background: color-mix(in oklab, var(--color-accent1) 30%, white); }
+.skill.is-tool { background: color-mix(in oklab, var(--color-primary) 60%, white); }
 
 /* Acciones */
 .about__actions {
+  display: flex; flex-wrap: wrap; gap: 0.7rem; margin-block-start: 1rem;
+}
+
+/* Opcional: en pantallas muy grandes, aún más presencia para la imagen */
+@media (min-width: 80rem) {
+  .about__grid { grid-template-columns: minmax(22rem, 42%) 1fr; }
+  .about__photo { aspect-ratio: 10/14; }
+}
+
+.about__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-block-start: 1rem;
+    gap: clamp(0.6rem, 1vw, 0.9rem);
+    margin-block-start: 1.25rem;
+}
+
+/* Estilos de botones (coherentes con la paleta) */
+.about__actions .button {
+    --btn-bg: var(--color-primary);
+    --btn-fg: #fff;
+    padding: 0.85em 1.35em;
+    border: none;
+    border-radius: 0.8em;
+    background: linear-gradient(180deg, color-mix(in oklab, var(--btn-bg) 92%, white), var(--btn-bg));
+    color: var(--btn-fg);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent);
+    transition: transform 120ms ease, filter 160ms ease, box-shadow 160ms ease;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+    text-decoration: none;
+    line-height: 1;
+    vertical-align: middle;
+}
+.about__actions .button:hover {
+    filter: brightness(1.06) saturate(1.05);
+    transform: translateY(-1px);
+    --btn-bg: var(--color-secondary);
+    text-decoration: none;
+}
+.about__actions .button:active { transform: translateY(0); }
+
+/* Accesibilidad de foco */
+.about__actions .button:focus-visible {
+    outline: none;
+    box-shadow:
+            0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent),
+            0 0 0 0.2rem color-mix(in oklab, var(--btn-bg) 35%, transparent);
+    text-decoration: none;
 }

@@ -18,7 +18,7 @@
 .navbar-logo {
     font-weight: 800;
     letter-spacing: 0.02em;
-    color: var(--color-accent2);
+    color: white;
 }
 
 .navbar-buttons {
@@ -30,7 +30,7 @@
     appearance: none;
     border: none;
     background: none;
-    color: var(--color-accent2);
+    color: white;
     font-weight: 600;
     padding: 0.5em 0.75em;
     border-radius: 0.5em;
