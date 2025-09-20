@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id": 1,
+    "title": "Adventurer's Guild",
+    "presentationImage": "Icon.png",
+    "images": ["Icon.png",  "Icon2.png", "Icon3.png"],
+    "description": "Este es un proyecto increíble desarrollado con React y CSS moderno. Incluye animaciones fluidas y un diseño responsivo que se adapta a cualquier dispositivo.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Blender", "Adobe Illustrator", "Adobe Photoshop"],
+      "tools": ["Mixamo", "FMod"]
+    },
+    "githubUrl": "https://github.com/MrKamikazee/Juego-del-gremio.git",
+    "itchIo": "",
+    "GDD": "https://docs.google.com/document/d/1fr9MrF3O_eOKkCTeqCbU1HwMKAUXlwwocqGStEs1vtw/edit?usp=sharing",
+    "features": [
+      "Diseño responsivo y mobile-first",
+      "Animaciones suaves con CSS",
+      "Interfaz intuitiva y moderna",
+      "Optimizado para rendimiento"
+    ]
+  }
+]
