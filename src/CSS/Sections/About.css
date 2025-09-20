@@ -1,5 +1,4 @@
-﻿/* Fondo: degradado inclinado y separación con secciones adyacentes */
-.about-section {
+﻿.about-section {
   background:
     linear-gradient(12deg,
       color-mix(in oklab, var(--color-bg2) 10%, var(--color-bg)) 0%,
@@ -7,7 +6,6 @@
       color-mix(in oklab, var(--color-bg) 70%, white) 100%);
   color: var(--color-text-dark);
   padding-block: clamp(2rem, 6vw, 4rem);
-  /* Separación visual arriba y abajo */
   border-top: 1px solid color-mix(in oklab, var(--color-shadow) 20%, transparent);
   border-bottom: 1px solid color-mix(in oklab, var(--color-shadow) 20%, transparent);
   box-shadow:
@@ -15,35 +13,28 @@
     0  0.5rem 1.5rem color-mix(in oklab, var(--color-shadow) 22%, transparent) inset;
 }
 
-/* Contenedor más ancho ya aplicado antes */
 .about.container {
-  inline-size: min(110ch, 96vw); /* más ancho aún */
+  inline-size: min(110ch, 96vw);
   margin-inline: auto;
   padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
-/* Título */
-.about__header { margin-block-end: clamp(1rem, 3vw, 1.5rem); }
+.about__header {
+    margin-block-end: clamp(1rem, 3vw, 1.5rem);
+}
 .about__title {
   font-weight: 800;
   border-bottom: 0.25rem solid var(--color-primary);
   display: inline-block;
   padding-block-end: 0.2em;
 }
-
-/* Grid: imagen grande y columna de contenido */
 .about__grid {
-  display: grid;
-  gap: clamp(1rem, 3vw, 2rem);
-  grid-template-columns: 1fr;
-  align-items: start;
-}
-@media (min-width: 50rem) {
-  /* La imagen ocupa ~40% para que al costado entren texto + skills */
-  .about__grid { grid-template-columns: minmax(18rem, 40%) 1fr; }
+    display: grid;
+    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: 1fr;
+    align-items: start;
 }
 
-/* Foto grande con proporción agradable */
 .about__photo {
   position: relative;
   border-radius: 1rem;
@@ -59,7 +50,6 @@
   object-fit: cover;
 }
 
-/* Columna de contenido: más ancho y con tipografía algo mayor */
 .about__content p {
   margin: 0 0 1rem;
   font-size: clamp(1.1rem, 1rem + 0.7vw, 1.35rem);
@@ -72,10 +62,9 @@
   color: var(--color-accent2);
 }
 
-/* Stats */
 .about__stats {
-  display: flex; flex-wrap: wrap; gap: 0.6rem;
-  margin-block: 0.5rem 1rem;
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-block: 0.5rem 1rem;
 }
 .stat {
   display: inline-flex; align-items: baseline; gap: 0.4rem;
@@ -83,34 +72,26 @@
   background: color-mix(in oklab, var(--color-primary) 60%, white);
   color: var(--color-accent2);
 }
-.stat__num { font-weight: 800; }
-.stat__label { opacity: 0.85; }
+.stat__num {
+    font-weight: 800;
+}
+.stat__label {
+    opacity: 0.85;
+}
 
-/* Skills: restauramos look de badges con buen contraste */
-.about__skills { margin-block: 1rem 1.25rem; }
-.about__subtitle { margin: 0 0 0.5rem; font-weight: 700; }
-.skills { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.about__skills {
+    margin-block: 1rem 1.25rem;
+}
+.about__subtitle {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+}
+.skills {
+    gap: 0.65rem;
+}
 .skill {
-  display: inline-block;
-  padding: 0.45em 1em;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-  letter-spacing: 0.01em;
-  color: var(--color-accent2);
-  background: color-mix(in oklab, var(--color-bg2) 10%, white);
-  border: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
-}
-
-/* Acciones */
-.about__actions {
-  display: flex; flex-wrap: wrap; gap: 0.7rem; margin-block-start: 1rem;
-}
-
-/* Opcional: en pantallas muy grandes, aún más presencia para la imagen */
-@media (min-width: 80rem) {
-  .about__grid { grid-template-columns: minmax(22rem, 42%) 1fr; }
-  .about__photo { aspect-ratio: 10/14; }
+    padding: 0.45em 1em;
+    font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
 }
 
 .about__actions {
@@ -125,4 +106,35 @@
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
     line-height: 1;
     vertical-align: middle;
+}
+
+@media (min-width: 80rem) {
+    .about__grid {
+        grid-template-columns: minmax(22rem, 42%) 1fr;
+    }
+    .about__photo {
+        aspect-ratio: 10/14;
+    }
+}
+
+@media (min-width: 50rem) {
+    .about__grid {
+        grid-template-columns: minmax(18rem, 40%) 1fr;
+    }
+}
+@media (max-width: 50rem) {
+    .about.container {
+        inline-size: var(--phone-column-size);
+        text-align: center;
+    }
+    .about__stats, .skills, .about__actions {
+        align-items: center;
+        justify-content: center;
+    }
+    .about__actions, .about__actions .button {
+        width: 100%;
+        font-size: clamp(1.3rem, 1rem + 0.25vw, 1.5rem);
+        line-height: 2;
+        gap: 1.2rem;
+    }
 }

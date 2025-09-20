@@ -24,8 +24,8 @@ const WelcomeSection = () => {
                 loop
                 playsInline
                 preload="none"
-                // src="/ruta/a/tu-video.mp4"
-                // poster="/ruta/a/tu-poster.jpg"
+                // src="/ruta/a/mi-video.mp4"
+                // poster="/ruta/a/mi-poster.jpg"
               />
             )}
           </div>

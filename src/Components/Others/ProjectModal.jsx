@@ -11,9 +11,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       if (e.key === 'Escape') onClose();
     };
     document.addEventListener('keydown', onKey);
-    // Intento de enfoque inicial en el botón cerrar
     closeBtnRef.current?.focus();
-    // Bloquea scroll del body mientras el modal está abierto
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
@@ -52,7 +50,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         </div>
 
         <div className="modal-body">
-          <div className="modal-image-conteiner">
+          <div className="modal-image-container">
             {hasMultiple && (
               <button
                   className="carousel-btn prev"
@@ -76,19 +74,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   ›
                 </button>
             )}
+            {hasMultiple && (
+                <div className="carousel-dots" aria-label="Selector de imagen">
+                    {images.map((_, i) => (
+                        <button
+                            key={i}
+                            className={`dot ${i === index ? 'is-active' : ''}`}
+                            onClick={() => setIndex(i)}
+                            aria-label={`Ir a imagen ${i + 1}`}
+                        />
+                    ))}
+                </div>
+            )}
           </div>
-          {hasMultiple && (
-            <div className="carousel-dots" aria-label="Selector de imagen">
-              {images.map((_, i) => (
-                <button
-                    key={i}
-                    className={`dot ${i === index ? 'is-active' : ''}`}
-                    onClick={() => setIndex(i)}
-                    aria-label={`Ir a imagen ${i + 1}`}
-                />
-              ))}
-            </div>
-          )}
           <div className="modal-info">
             <section className="modal-section">
               <h3>Descripción</h3>

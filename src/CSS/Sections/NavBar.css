@@ -1,5 +1,4 @@
-﻿/* Barra fija que aparece desde arriba con GSAP; sin px fijos */
-.navbar {
+﻿.navbar {
     position: fixed;
     inset-inline: 0;
     top: 0;
@@ -38,7 +37,6 @@
 }
 .navbar-button:hover { background: color-mix(in oklab, var(--color-primary) 14%, white); color: var(--color-accent2); }
 
-/* Hamburguesa */
 .hamburger-button {
     appearance: none;
     background: none;
@@ -60,7 +58,6 @@
 }
 .hamburger-button .hamburger-line + .hamburger-line { margin-top: 0.25rem; }
 
-/* Menú móvil desplegable */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -81,7 +78,6 @@
 }
 .mobile-menu-button:hover { background: color-mix(in oklab, var(--color-primary) 14%, white); }
 
-/* A partir de tablet, mostramos botones y ocultamos hamburguesa/menú móvil */
 @media (min-width: 48rem) {
     .navbar-container { grid-template-columns: 1fr auto; }
     .navbar-buttons { display: inline-flex; }

@@ -21,8 +21,6 @@ function NavBar() {
         const buttons = buttonsRef.current;
         const hamburger = hamburgerRef.current;
 
-        //TODO: ARREGLAR LA ANIMACIÓN DE SALIDA
-
         gsap.set(navbar, {
             backgroundColor: "transparent",
             backdropFilter: "none",

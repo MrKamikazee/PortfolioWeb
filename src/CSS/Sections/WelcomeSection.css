@@ -1,23 +1,19 @@
-﻿/* Hero de bienvenida con fondo SOLIDO usando la paleta global */
-.welcome {
+﻿.welcome {
   position: relative;
   inline-size: 100%;
   block-size: 100svh;
   display: grid;
   place-items: center;
   overflow: hidden;
-  /* color sólido desde tu paleta */
   background: var(--color-bg2);
 }
 
-/* Contenedor de fondo (por ahora vacío, pero listo para video/gif futuro) */
 .welcome__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* Ocultamos el video por ahora; cuando lo tengas, quita display:none */
 .welcome__video {
   position: absolute;
   inset: 0;
@@ -27,7 +23,6 @@
   display: none;
 }
 
-/* Contenido centrado */
 .welcome__content {
   position: relative;
   z-index: 1;
@@ -35,7 +30,6 @@
   padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
-/* Título grande y legible sobre fondo oscuro */
 .welcome__title {
   color: white;
   line-height: 1.1;
@@ -45,7 +39,6 @@
   margin: 0;
 }
 
-/* Respeto a preferencias del usuario */
 @media (prefers-reduced-motion: reduce) {
   .welcome__video { animation: none !important; }
 }

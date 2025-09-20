@@ -10,9 +10,22 @@
     --color-text-dark: #202020;
     --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     --font-heading: "Poppins", var(--font-sans);
+    --phone-column-size: 80vw;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#root, .App {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -24,10 +37,32 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.01em;
 }
 
-.skill.is-code { background: color-mix(in oklab, var(--color-secondary) 30%, white); }
-.skill.is-app  { background: color-mix(in oklab, var(--color-accent1) 30%, white); }
-.skill.is-tool { background: color-mix(in oklab, var(--color-primary) 60%, white); }
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+.skill {
+    display: inline-block;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--color-accent2);
+    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    border: 1px solid color-mix(in oklab, var(--color-shadow) 18%, transparent);
+}
+.skill.is-code {
+    background: color-mix(in oklab, var(--color-secondary) 30%, white);
+}
+.skill.is-app  {
+    background: color-mix(in oklab, var(--color-accent1) 30%, white);
+}
+.skill.is-tool {
+    background: color-mix(in oklab, var(--color-primary) 60%, white);
+}
 
+a, button, .button {
+    -webkit-tap-highlight-color: transparent;
+}
 .button {
     --btn-bg: var(--color-primary);
     --btn-fg: #fff;
@@ -41,16 +76,26 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 120ms ease, filter 160ms ease, box-shadow 160ms ease;
     text-decoration: none;
 }
-.button:hover {
-    filter: brightness(1.06) saturate(1.05);
-    transform: translateY(-1px);
-    --btn-bg: var(--color-secondary);
+.button:active {
+    transform: translateY(0);
 }
-.button:active { transform: translateY(0); }
-
 .button:focus-visible {
     outline: none;
     box-shadow:
             0 0.35rem 0.9rem color-mix(in oklab, var(--color-shadow) 28%, transparent),
             0 0 0 0.2rem color-mix(in oklab, var(--btn-bg) 35%, transparent);
+}
+@media (hover: hover) and (pointer: fine){
+    .button:hover {
+        filter: brightness(1.06) saturate(1.05);
+        transform: translateY(-1px);
+        --btn-bg: var(--color-secondary);
+    }
+}
+@media (max-width: 50rem) {
+    .button:active {
+        filter: brightness(1.06) saturate(1.05);
+        transform: translateY(-1px);
+        --btn-bg: var(--color-secondary);
+    }
 }
