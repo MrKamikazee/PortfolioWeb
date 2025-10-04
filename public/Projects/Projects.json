@@ -4,7 +4,7 @@
     "title": "Adventurer's Guild",
     "presentationImage": "Icon.png",
     "images": ["Icon.png",  "Icon2.png", "Icon3.png"],
-    "description": "Este es un proyecto increíble desarrollado con React y CSS moderno. Incluye animaciones fluidas y un diseño responsivo que se adapta a cualquier dispositivo.",
+    "description": "Este es un prototipo del género de 'Gestión' con una mezcla de 'Tower Defense' basado en los gremios de aventureros de los animes. El jugador deberá gestionar tanto el gremio como sus aventureros a la vez que defiende el gremio de las oleadas de enemigos.",
     "technologies": {
       "codes": ["C#"],
       "apps": ["Unity", "Blender", "Adobe Illustrator", "Adobe Photoshop"],
@@ -14,10 +14,52 @@
     "itchIo": "",
     "GDD": "https://docs.google.com/document/d/1fr9MrF3O_eOKkCTeqCbU1HwMKAUXlwwocqGStEs1vtw/edit?usp=sharing",
     "features": [
-      "Diseño responsivo y mobile-first",
-      "Animaciones suaves con CSS",
-      "Interfaz intuitiva y moderna",
-      "Optimizado para rendimiento"
+      "Sistema de oleadas",
+      "Sistema de misiones",
+      "Sistema de animaciones avanzado",
+      "Sistema de construcción",
+      "Sistema de rangos y equipamientos para los aventureros",
+      "Sistema de aventureros (vida, rangos, habilidades, trabajos)"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Submarine Project",
+    "presentationImage": "Icon.png",
+    "images": ["Icon.png"],
+    "description": "Este es un prototipo para VR donde el jugador deberá manejar un submarino e ir hacia lo profundo del mar. La idea base era representar la talasofobia.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Blender", "Adobe Illustrator", "Adobe Photoshop"],
+      "tools": ["Mixamo", "MetaXR"]
+    },
+    "githubUrl": "https://github.com/MrKamikazee/Submarine-Project.git",
+    "itchIo": "",
+    "GDD": "https://docs.google.com/document/d/1bKq-8Z3qtZJo-QcGU6Y36ZL7SHj3SnUs160cAn1ktAU/edit?tab=t.0",
+    "features": [
+      "Sistema de profundidad",
+      "Sistema de recursos",
+      "Sistema de movimiento para el submarino"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Juicios",
+    "presentationImage": "Icon.png",
+    "images": ["Icon.png"],
+    "description": "Este es un proyecto creado para la carrera de abogacía de la Universidad Nacional Andres Bello de Chile. Consiste en simular un juício de manera digital y web, con diferentes roles, avatares, sistema de chat de texto y voz.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Blender", "Adobe Illustrator"],
+      "tools": ["Mixamo", "WebGPU", "Photon", "Ready Player Me"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "",
+    "features": [
+      "Roles dinámico",
+      "Chat de voz y texto",
+      "Manejo de archivos externos (PDF, PNG)"
     ]
   }
 ]
