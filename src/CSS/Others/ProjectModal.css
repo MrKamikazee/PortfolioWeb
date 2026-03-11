@@ -62,20 +62,24 @@
 .modal-image-container {
     display: grid;
     grid-template-rows: 1fr auto;
-    align-items: stretch;
-    justify-items: stretch;
+    grid-template-columns: auto 1fr auto;
+    row-gap: 0.75rem;
+    align-items: center;
+    justify-items: center;
     position: relative;
     border-radius: 0.8rem;
     overflow: hidden;
     background: transparent;
-    min-block-size: clamp(14rem, 40svh, 28rem);
+    min-block-size: 0;
+    max-block-size: 80svh;
     padding: 1rem;
 }
 
 .modal-image {
     position: relative;
-    align-self: stretch;
-    justify-self: stretch;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / -1;
     background: color-mix(in oklab, var(--color-bg2) 6%, white);
     border-radius: inherit;
     box-shadow: 0 0.5rem 1.2rem color-mix(in oklab, var(--color-shadow) 25%, transparent);
@@ -83,21 +87,22 @@
 .modal-image img {
     display: block;
     inline-size: 100%;
-    block-size: 100%;
+    block-size: auto;
+    max-block-size: 70svh;
     object-fit: contain;
-    background: color-mix(in oklab, var(--color-bg2) 10%, white);
+    background: color-mix(in oklab, var(--color-bg2) 40%, white);
     border-radius: inherit;
 }
 
 .modal-image-container .carousel-dots {
     grid-row: 2;
-    grid-column: 1;
-    width: 100%;
+    grid-column: 2;
     display: flex;
     justify-content: center;
     gap: 0.6rem;
-    margin: 0.5rem 0 0;
-    padding: 0.5rem 0;
+    margin: 0;
+    padding: 0.45rem 0;
+    align-items: center;
 }
 .carousel-dots {
     grid-column: auto;
@@ -122,40 +127,46 @@
 }
 
 .carousel-btn {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    transform: translateY(-100%);
-    inline-size: clamp(2.2rem, 3.5vw, 2.8rem);
-    block-size: clamp(2.2rem, 3.5vw, 2.8rem);
+    position: static;
+    z-index: 1;
+    align-self: center;
+    inline-size: clamp(2.6rem, 4vw, 3.2rem);
+    block-size: clamp(2.6rem, 4vw, 3.2rem);
     border: none;
-    border-radius: 50%;
+    border-radius: 0.6rem;
     display: grid;
     place-items: center;
-    background: color-mix(in oklab, var(--color-accent2) 70%, black);
+    background: var(--color-primary);
     color: white;
-    font-size: clamp(1.2rem, 1vw + 0.75rem, 1.6rem);
+    font-size: clamp(1.3rem, 1vw + 0.9rem, 1.8rem);
     cursor: pointer;
-    opacity: 0.6;
-    transition: transform 120ms ease, opacity 160ms ease, background-color 160ms ease;
+    opacity: 0.9;
+    transition: transform 120ms ease, opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 @media (hover: hover) and (pointer: fine){
     .carousel-btn:hover {
-        transform: translateY(-100%) scale(1.05);
+        transform: scale(1.04);
         opacity: 1;
+        background: color-mix(in oklab, var(--color-primary) 90%, white);
     }
 }
 @media (max-width: 50rem) {
     .carousel-btn:active {
-        transform: translateY(-100%) scale(1.05);
+        transform: scale(1.03);
         opacity: 1;
     }
 }
 .carousel-btn.prev {
-    left: 2rem;
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: start;
+    margin-inline-start: 0.25rem;
 }
 .carousel-btn.next {
-    right: 2rem;
+    grid-row: 2;
+    grid-column: 3;
+    justify-self: end;
+    margin-inline-end: 0.25rem;
 }
 .carousel-btn:focus-visible,
 .carousel-dots .dot:focus-visible {

@@ -70,7 +70,7 @@ function AboutSection() {
                 </header>
 
                 <div className="about__grid">
-                    <figure className="about__media" ref={imageRef}>
+                    <figure ref={imageRef}>
                         <div className="about__photo">
                             <img src={`${process.env.PUBLIC_URL}/Images/MiFoto.jpg`} alt="Foto de Martín" />
                         </div>
