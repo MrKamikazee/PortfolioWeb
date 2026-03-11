@@ -3,8 +3,8 @@
     "id": 1,
     "title": "Adventurer's Guild",
     "presentationImage": "Icon.png",
-    "images": ["Icon.png",  "Icon2.png", "Icon3.png"],
-    "description": "Este es un proyecto increíble desarrollado con React y CSS moderno. Incluye animaciones fluidas y un diseño responsivo que se adapta a cualquier dispositivo.",
+    "images": ["Icon.png", "Main Menu.png", "Mission Table.png", "Rooms 1.png", "Rooms 2.png"],
+    "description": "Este es un prototipo del género de 'Gestión' con una mezcla de 'Tower Defense' basado en los gremios de aventureros de los animes. El jugador deberá gestionar tanto el gremio como sus aventureros a la vez que defiende el gremio de las oleadas de enemigos.",
     "technologies": {
       "codes": ["C#"],
       "apps": ["Unity", "Blender", "Adobe Illustrator", "Adobe Photoshop"],
@@ -14,10 +14,32 @@
     "itchIo": "",
     "GDD": "https://docs.google.com/document/d/1fr9MrF3O_eOKkCTeqCbU1HwMKAUXlwwocqGStEs1vtw/edit?usp=sharing",
     "features": [
-      "Diseño responsivo y mobile-first",
-      "Animaciones suaves con CSS",
-      "Interfaz intuitiva y moderna",
-      "Optimizado para rendimiento"
+      "Sistema de oleadas",
+      "Sistema de misiones",
+      "Sistema de animaciones avanzado",
+      "Sistema de construcción",
+      "Sistema de rangos y equipamientos para los aventureros",
+      "Sistema de aventureros (vida, rangos, habilidades, trabajos)"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Juicios",
+    "presentationImage": "Kyon Icon.png",
+    "images": ["Kyon Icon.png", "UNAB Icon.png", "Juicios 1.png", "Juicios 2.png"],
+    "description": "Este es un proyecto creado para la carrera de abogacía de la Universidad Nacional Andres Bello de Chile. Consiste en simular un juício de manera digital y web, con diferentes roles, avatares, sistema de chat de texto y voz; y tranferencia de archivos.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Blender", "Adobe Illustrator"],
+      "tools": ["Mixamo", "WebGPU", "Photon Fusion", "Ready Player Me"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "",
+    "features": [
+      "Roles dinámico",
+      "Chat de voz y texto",
+      "Manejo de archivos externos (PDF, PNG)"
     ]
   }
 ]
