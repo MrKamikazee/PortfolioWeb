@@ -99,25 +99,33 @@ function AboutSection() {
                             <h3 className="about__subtitle">Conocimientos Principales</h3>
                             <div className="skills">
                                 <span className="skill is-code">C#</span>
+                                <span className="skill is-code">.NET</span>
                                 <span className="skill is-code">C++</span>
                                 <span className="skill is-code">Blueprints</span>
                                 <span className="skill is-app">Unity</span>
                                 <span className="skill is-app">Unreal</span>
-                                <span className="skill is-app">Blender</span>
                                 <span className="skill is-tool">Git</span>
-                                <span className="skill is-tool">Photon</span>
-                                <span className="skill is-tool">SpacetimeDB</span>
+                                <span className="skill is-tool">Photon Engine</span>
+                                <span className="skill is-tool">Meta SDK</span>
+                                <span className="skill is-tool">AWS</span>
                             </div>
                         </div>
 
                         <div className="about__actions">
                             <a
                                 className="button button--secondary"
-                                href="https://drive.proton.me/urls/5J7NAMNBBR#l2IJOZU7HEHH"
+                                href="https://drive.google.com/file/d/1Ypq_9_4V2T7cLaFsBjrrahXbEsPupoGA/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 Descargar CV
+                            </a>
+                            <a
+                                className="button button--secondary"
+                                href="https://drive.google.com/drive/folders/1GOOU7EmMWd_K_u9jk6u1FETQGVnpwszU?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Videos
                             </a>
                             <a className="button" onClick={scrollToProjects}>Ver Proyectos</a>
                         </div>

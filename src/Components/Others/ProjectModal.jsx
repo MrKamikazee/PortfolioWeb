@@ -104,7 +104,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
             {project.features?.length ? (
               <section className="modal-section">
-                <h3>Características</h3>
+                <h3>Características en las que trabajé</h3>
                 <ul className="features">
                   {project.features.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
@@ -117,6 +117,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="button modal-button">GitHub</a>}
           {project.itchIo && <a href={project.itchIo} target="_blank" rel="noopener noreferrer" className="button modal-button">Itch.Io</a>}
           {project.GDD && <a href={project.GDD} target="_blank" rel="noopener noreferrer" className="button modal-button">GDD</a>}
+          {project.Video && <a href={project.Video} target="_blank" rel="noopener noreferrer" className="button modal-button">Video</a>}
         </div>
       </div>
     </div>
