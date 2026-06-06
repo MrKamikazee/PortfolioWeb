@@ -27,7 +27,7 @@
     "id": 2,
     "title": "Juicios",
     "presentationImage": "Kyon Icon.png",
-    "images": ["Kyon Icon.png", "UNAB Icon.png", "Juicios 1.png", "Juicios 2.png"],
+    "images": ["Kyon Icon.png", "UNAB Icon.png", "Juicios 1.png", "Juicios 2.png", "Juicios 3.png", "Juicios 4.png"],
     "description": "Este es un proyecto creado para la carrera de abogacía de la Universidad Nacional Andres Bello de Chile. Consiste en simular un juício de manera digital y web, con diferentes roles, avatares, sistema de chat de texto y voz; y tranferencia de archivos.",
     "technologies": {
       "codes": ["C#"],
@@ -44,6 +44,50 @@
       "Manejo de archivos externos (PDF, PNG)",
       "Conexión Multijugador",
       "Sistema de interacciones"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Submarine Project",
+    "presentationImage": "Portada.png",
+    "images": ["Portada.png", "Sumbarino 1.png", "Sumbarino 2.png", "Sumbarino 3.png", "Sumbarino 4.png", "Sumbarino 5.png"],
+    "description": "Lideré el desarrollo técnico de una experiencia inmersiva en Realidad Virtual (VR) enfocada en la exploración submarina y la estimulación de la talasofobia. Diseñé y programé toda la arquitectura de backend, implementando el sistema de físicas y movimiento del vehículo, así como las mecánicas de supervivencia, salud y gestión de inventario. Logré consolidar un prototipo funcional y atmosférico altamente pulido, coordinando la toma de decisiones críticas del equipo y demostrando una sólida capacidad para resolver dinámicas complejas en entornos virtuales.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity"],
+      "tools": ["Meta SDK"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "https://drive.google.com/file/d/1LISjU0z3UA4jO5-4sb_AesQ3JFPMmhUU/view?usp=sharing",
+    "Video": "https://drive.google.com/file/d/19pwP5BJkDQovwDeqJAX9Okb-wJYhHUew/view?usp=drive_link",
+    "features": [
+      "Sistema de movimiento",
+      "Movimiento de brazos",
+      "Sistema de inventario",
+      "Sistema de profundidad"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Nerf Prototipe",
+    "presentationImage": "Portada.jpg",
+    "images": ["Portada.jpg", "Nerf 1.jpg", "Nerf 2.jpg", "Nerf 3.jpg", "Nerf 4.jpg", "Nerf 5.jpg", "Nerf 6.jpg", "Nerf 7.jpg"],
+    "description": "En este proyecto estuve explorando, investigando y aprendiendo sobre Epic Online Servicies (EOS) y como funciona el multijugador en Unreal Engine. Todo esto en un prototipo para Meta Quest 2",
+    "technologies": {
+      "codes": ["Blueprints"],
+      "apps": ["Unreal Engine 5"],
+      "tools": ["Unreal Engine AR", "Epic Online Servicies (EOS)"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "",
+    "Video": "https://drive.google.com/file/d/1g3b8aOT4b1AtYM_MubhZVyr0TbYWDE6J/view?usp=sharing",
+    "features": [
+      "Sistema de movimiento",
+      "Sistema de interacción con las armas",
+      "Sistema de desglose",
+      "Sistema multijugador"
     ]
   }
 ]
