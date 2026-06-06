@@ -50,7 +50,7 @@
     "id": 3,
     "title": "Submarine Project",
     "presentationImage": "Portada.png",
-    "images": ["Portada.png", "Sumbarino 1.png", "Sumbarino 2.png", "Sumbarino 3.png", "Sumbarino 4.png", "Sumbarino 5.png"],
+    "images": ["Portada.png", "Sumbarino 1.png", "Sumbarino 2.png", "Sumbarino 3.png", "Sumbarino 4.png"],
     "description": "Lideré el desarrollo técnico de una experiencia inmersiva en Realidad Virtual (VR) enfocada en la exploración submarina y la estimulación de la talasofobia. Diseñé y programé toda la arquitectura de backend, implementando el sistema de físicas y movimiento del vehículo, así como las mecánicas de supervivencia, salud y gestión de inventario. Logré consolidar un prototipo funcional y atmosférico altamente pulido, coordinando la toma de decisiones críticas del equipo y demostrando una sólida capacidad para resolver dinámicas complejas en entornos virtuales.",
     "technologies": {
       "codes": ["C#"],
