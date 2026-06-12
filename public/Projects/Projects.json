@@ -89,5 +89,47 @@
       "Sistema de desglose",
       "Sistema multijugador"
     ]
+  },
+  {
+    "id": 5,
+    "title": "Crazy Animals",
+    "presentationImage": "Crazy Goat.png",
+    "images": ["Crazy Goat.png", "Crazy Animals 1.png", "Crazy Animals 2.png", "Crazy Animals 3.png", "Crazy Animals 4.png", "Crazy Animals 5.png"],
+    "description": "Este prototipo es un juego hipercasual donde el usuario ayuda a una cabra a golpear objetos mientras se va comprando equipamiento y mejoras. La idea es crear algo entretenido de jugar para matar el tiempo muerto (viajes entre lugares, espera en una recepción, etc).",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Magia Voxel"],
+      "tools": []
+    },
+    "githubUrl": "https://github.com/MrKamikazee/Crazy-Animals.git",
+    "itchIo": "https://martin-roman.itch.io/crazy-goat",
+    "GDD": "",
+    "Video": "https://drive.google.com/file/d/1Gr4ywV2aB0c7zEGG3TRCDQgTxXAvhLMl/view?usp=drive_link",
+    "features": [
+      "Sistema de cliqueo",
+      "La tienda de mejoras",
+      "Sistema de mapa infinito"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Danone Transporte",
+    "presentationImage": "Danone Portada.png",
+    "images": ["Danone Portada.png", "Danone 1.png", "Danone 2.png", "Danone 3.png", "Danone 4.png"],
+    "description": "Este es un proyecto VR de capacitación de transportistas de carga en VR, el cual fui contratado como freelance con los objetivos de integrar un volante Logitech G29 y hacerlo funcionar con los sistemas ya creados, agregar un 'force feedback' para mejorar la sensación de manejo del camión y convertir la aplicación entera de 'Control Tracking' a 'Hand Tracking'",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Logitech G Hub", "Meta Horizon Link"],
+      "tools": ["Unity XR", "Logitech SDK"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "",
+    "Video": "https://drive.google.com/file/d/1n5nsrYmH3Ow7vGXCkteUFse4fAZTkwlS/view?usp=drive_link",
+    "features": [
+      "Integración completa del volante Logitech G29 y Logitech G293",
+      "Adaptación hacia el HandTracking",
+      "Force Feedback"
+    ]
   }
 ]
