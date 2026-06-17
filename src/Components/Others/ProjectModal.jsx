@@ -1,4 +1,4 @@
-﻿import React, {useMemo, useState, useEffect, useRef} from 'react';
+import React, {useMemo, useState, useEffect, useRef} from 'react';
 import '../../CSS/Others/ProjectModal.css';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
@@ -51,41 +51,41 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
         <div className="modal-body">
           <div className="modal-image-container">
-            {hasMultiple && (
-              <button
-                  className="carousel-btn prev"
-                  onClick={goPrev}
-                  aria-label="Anterior"
-              >
-                  ‹
-              </button>
-            )}
-            <div className="modal-image">
-              <img src={resolveImageSrc(images[index])}
-                   alt={`${project.title} - ${index + 1}/${images.length}`}
+            <div className="modal-image-wrapper">
+              <img
+                src={resolveImageSrc(images[index])}
+                alt={`${project.title} - ${index + 1}/${images.length}`}
+                className="modal-image-element"
               />
-            </div>
-            {hasMultiple && (
-                <button
-                  className="carousel-btn next"
-                  onClick={goNext}
-                  aria-label="Siguiente"
-                >
-                  ›
-                </button>
-            )}
-            {hasMultiple && (
-                <div className="carousel-dots" aria-label="Selector de imagen">
+              {hasMultiple && (
+                <>
+                  <button
+                    className="carousel-btn prev"
+                    onClick={goPrev}
+                    aria-label="Anterior"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    className="carousel-btn next"
+                    onClick={goNext}
+                    aria-label="Siguiente"
+                  >
+                    ›
+                  </button>
+                  <div className="carousel-dots" aria-label="Selector de imagen">
                     {images.map((_, i) => (
-                        <button
-                            key={i}
-                            className={`dot ${i === index ? 'is-active' : ''}`}
-                            onClick={() => setIndex(i)}
-                            aria-label={`Ir a imagen ${i + 1}`}
-                        />
+                      <button
+                        key={i}
+                        className={`dot ${i === index ? 'is-active' : ''}`}
+                        onClick={() => setIndex(i)}
+                        aria-label={`Ir a imagen ${i + 1}`}
+                      />
                     ))}
-                </div>
-            )}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
           <div className="modal-info">
             <section className="modal-section">

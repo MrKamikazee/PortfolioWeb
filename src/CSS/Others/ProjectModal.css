@@ -60,113 +60,101 @@
     overflow: auto;
 }
 .modal-image-container {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: auto 1fr auto;
-    row-gap: 0.75rem;
-    align-items: center;
-    justify-items: center;
+    inline-size: 100%;
+}
+
+.modal-image-wrapper {
     position: relative;
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #1a1a1a;
     border-radius: 0.8rem;
     overflow: hidden;
-    background: transparent;
-    min-block-size: 0;
-    max-block-size: 80svh;
-    padding: 1rem;
-}
-
-.modal-image {
-    position: relative;
-    align-self: center;
-    justify-self: center;
-    grid-column: 1 / -1;
-    background: color-mix(in oklab, var(--color-bg2) 6%, white);
-    border-radius: inherit;
-    box-shadow: 0 0.5rem 1.2rem color-mix(in oklab, var(--color-shadow) 25%, transparent);
-}
-.modal-image img {
-    display: block;
-    inline-size: 100%;
-    block-size: auto;
-    max-block-size: 70svh;
-    object-fit: contain;
-    background: color-mix(in oklab, var(--color-bg2) 40%, white);
-    border-radius: inherit;
-}
-
-.modal-image-container .carousel-dots {
-    grid-row: 2;
-    grid-column: 2;
+    box-shadow: 0 0.5rem 1.5rem color-mix(in oklab, var(--color-shadow) 20%, transparent);
     display: flex;
-    justify-content: center;
-    gap: 0.6rem;
-    margin: 0;
-    padding: 0.45rem 0;
     align-items: center;
+    justify-content: center;
 }
-.carousel-dots {
-    grid-column: auto;
-    order: initial;
-    margin-block: 0;
-}
-.carousel-dots .dot {
-    inline-size: 1rem;
-    block-size: 1rem;
-    border-radius: 50%;
-    border: 2px solid color-mix(in oklab, var(--color-shadow) 35%, transparent);
-    background: color-mix(in oklab, var(--color-bg2) 10%, white);
-    cursor: pointer;
-    transition: transform 120ms ease, background-color 160ms ease, border-color 160ms ease;
-}
-.carousel-dots .dot:hover {
-    transform: scale(1.1);
-}
-.carousel-dots .dot.is-active {
-    background: var(--color-primary);
-    border-color: color-mix(in oklab, var(--color-primary) 60%, var(--color-shadow));
+
+.modal-image-element {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .carousel-btn {
-    position: static;
-    z-index: 1;
-    align-self: center;
-    inline-size: clamp(2.6rem, 4vw, 3.2rem);
-    block-size: clamp(2.6rem, 4vw, 3.2rem);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    inline-size: clamp(2.2rem, 4.5vw, 2.8rem);
+    block-size: clamp(2.2rem, 4.5vw, 2.8rem);
     border: none;
-    border-radius: 0.6rem;
+    border-radius: 50%;
     display: grid;
     place-items: center;
-    background: var(--color-primary);
+    background: rgba(242, 56, 71, 0.85);
     color: white;
-    font-size: clamp(1.3rem, 1vw + 0.9rem, 1.8rem);
+    font-size: clamp(1.1rem, 1vw + 0.8rem, 1.5rem);
     cursor: pointer;
-    opacity: 0.9;
-    transition: transform 120ms ease, opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    opacity: 0.8;
+    transition: transform 120ms ease, opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.3);
 }
-@media (hover: hover) and (pointer: fine){
-    .carousel-btn:hover {
-        transform: scale(1.04);
-        opacity: 1;
-        background: color-mix(in oklab, var(--color-primary) 90%, white);
-    }
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.08);
+    opacity: 1;
+    background: var(--color-primary);
+    box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.4);
 }
-@media (max-width: 50rem) {
-    .carousel-btn:active {
-        transform: scale(1.03);
-        opacity: 1;
-    }
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.96);
 }
+
 .carousel-btn.prev {
-    grid-row: 2;
-    grid-column: 1;
-    justify-self: start;
-    margin-inline-start: 0.25rem;
+    left: 0.75rem;
 }
+
 .carousel-btn.next {
-    grid-row: 2;
-    grid-column: 3;
-    justify-self: end;
-    margin-inline-end: 0.25rem;
+    right: 0.75rem;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.carousel-dots .dot {
+    inline-size: 0.55rem;
+    block-size: 0.55rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 160ms ease, transform 120ms ease;
+}
+
+.carousel-dots .dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+}
+
+.carousel-dots .dot.is-active {
+    background: var(--color-primary);
+    transform: scale(1.1);
 }
 .carousel-btn:focus-visible,
 .carousel-dots .dot:focus-visible {
@@ -213,22 +201,10 @@
     padding: 0.7em 1.1em;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 48rem) {
     .modal-body {
-        grid-template-columns: 1.1fr 1fr;
+        grid-template-columns: 1.2fr 1fr;
         align-items: start;
-    }
-    .modal-body > .modal-image-container {
-        grid-column: 1;
-    }
-}
-@media (max-width: 30rem) {
-    .carousel-dots .dot {
-        inline-size: 1rem;
-        block-size: 1rem;
-    }
-    .modal-image-container .carousel-dots {
-        gap: 0.7rem;
-        padding: 0.55rem 0;
+        gap: 1.5rem;
     }
 }
