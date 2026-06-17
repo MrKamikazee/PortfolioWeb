@@ -131,5 +131,27 @@
       "Adaptación hacia el HandTracking",
       "Force Feedback"
     ]
+  },
+  {
+    "id": 7,
+    "title": "H2V VR",
+    "presentationImage": "H2V VR Portada.png",
+    "images": ["H2V VR Portada.png", "H2V VR 1.png", "H2V VR 2.png", "H2V VR 3.png", "H2V VR 4.png", "H2V VR 5.png", "H2V VR 6.png", "H2V VR 7.png", "H2V VR 8.png", "H2V VR 9.png"],
+    "description": "Co-desarrollé un simulador educativo nativo en Realidad Virtual (PICO) para el Gobierno de Chile, diseñado para concientizar a jóvenes sobre el cambio climático y la transición energética. Programé mecánicas interactivas y pedagógicas críticas, participando en la creación del recorrido guiado de la planta y desarrollando en su totalidad la simulación técnica de protocolos de emergencia ante fugas de hidrógeno. Logré entregar una experiencia de alto impacto visual y formativo, que gamificó con éxito procesos industriales complejos dentro de un entorno seguro, inmersivo y atractivo para el público objetivo.",
+    "technologies": {
+      "codes": ["C#"],
+      "apps": ["Unity", "Meta Horizon Link"],
+      "tools": ["Unity XR"]
+    },
+    "githubUrl": "",
+    "itchIo": "",
+    "GDD": "",
+    "Video": "https://drive.google.com/file/d/1z4ew6yMgl4NjTqKqoI4-Xti3Poyy-oka/view?usp=drive_link",
+    "features": [
+      "Desarrollo completo de la EXP 3",
+      "Apoyo en el desarrollo de la EXP 1",
+      "Apoyo en el desarrolo del escenario de bienvenida y del escenario de selección de experiencias",
+      "QA de todo el proyecto"
+    ]
   }
 ]

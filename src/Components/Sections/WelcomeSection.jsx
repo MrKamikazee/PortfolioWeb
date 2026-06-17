@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const WelcomeSection = () => {
@@ -16,18 +16,15 @@ const WelcomeSection = () => {
     return (
       <section className="welcome" ref={sectionRef}>
           <div className="welcome__bg" aria-hidden="true">
-            {false && (
-              <video
-                className="welcome__video"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none"
-                // src="/ruta/a/mi-video.mp4"
-                // poster="/ruta/a/mi-poster.jpg"
-              />
-            )}
+            <video
+              className="welcome__video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              src={`${process.env.PUBLIC_URL}/Images/Background 1.mp4`}
+            />
           </div>
           <div className="welcome__content">
               <h1 className="welcome__title" ref={logoRef}>

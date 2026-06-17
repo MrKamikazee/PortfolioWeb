@@ -1,4 +1,4 @@
-﻿.welcome {
+.welcome {
   position: relative;
   inline-size: 100%;
   block-size: 100svh;
@@ -14,13 +14,22 @@
   z-index: 0;
 }
 
+.welcome__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .welcome__video {
   position: absolute;
   inset: 0;
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
-  display: none;
+  z-index: 0;
 }
 
 .welcome__content {
@@ -37,6 +46,10 @@
   font-size: clamp(2.25rem, 4.5vw + 1rem, 6rem);
   text-shadow: 0 0.25em 0.9em rgba(0,0,0,0.35);
   margin: 0;
+  display: inline-block;
+  background-color: var(--color-secondary);
+  padding: 0.25em 0.4em;
+  border-radius: 0.3em;
 }
 
 @media (prefers-reduced-motion: reduce) {
